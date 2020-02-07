@@ -1,18 +1,18 @@
-/db.sqlite3
+/service/db.sqlite3
 /.idea/
 
-/frontend/dist
-/frontend/tmp
-/frontend/out-tsc
+/client/dist
+/client/tmp
+/client/out-tsc
 # Only exists if Bazel was run
-/frontend/bazel-out
+/client/bazel-out
 
 # dependencies
-/frontend/node_modules
+/client/node_modules
 
 # profiling files
-/frontend/chrome-profiler-events*.json
-/frontend/speed-measure-plugin*.json
+/client/chrome-profiler-events*.json
+/client/speed-measure-plugin*.json
 
 # IDEs and editors
 /.idea
@@ -32,15 +32,28 @@
 .history/*
 
 # misc
-/frontend/.sass-cache
-/frontend/connect.lock
-/frontend/coverage
-/frontend/libpeerconnection.log
-/frontend/npm-debug.log
-/frontend/yarn-error.log
-/frontend/testem.log
-/frontend/typings
+/client/.sass-cache
+/client/connect.lock
+/client/coverage
+/client/libpeerconnection.log
+/client/npm-debug.log
+/client/yarn-error.log
+/client/testem.log
+/client/typings
 
 # System Files
 .DS_Store
 Thumbs.db
+
+# Local private configuration, databases, keys and build environments
+.env
+.env.*
+!.env.example
+*.sqlite3
+*.sqlite3-journal
+*.pem
+*.key
+.venv/
+venv/
+__pycache__/
+*.py[cod]
