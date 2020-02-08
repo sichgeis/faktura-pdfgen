@@ -1,0 +1,68 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Header
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="d-flex mb-n3">
+    <div class="w-100"></div>
+    <mat-form-field class="flex-fill w-100" appearance="outline">
+      <mat-label>Your company name</mat-label>
+      <input matInput #company (keyup)="companyChanged(company.value)">
+    </mat-form-field>
+  </div>
+
+  <hr/>
+
+  <div class="d-flex">
+
+    <div class="flex-fill">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Recipient name</mat-label>
+        <input matInput #recName (keyup)="recipientNameChanged(recName.value)">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Recipient company name</mat-label>
+        <input matInput #recCompany (keyup)="recipientCompanyChanged(recCompany.value)">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Street and house number</mat-label>
+        <input matInput #recStreet (keyup)="recipientStreetAddressChanged(recStreet.value)">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Post code and city</mat-label>
+        <input matInput #recCity (keyup)="recipientCityChanged(recCity.value)">
+      </mat-form-field>
+    </div>
+
+    <div class="w-25"></div>
+
+    <div class="flex-fill">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Your street and house number</mat-label>
+        <input matInput #street (keyup)="streetAddressChanged(street.value)">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Your post code and city</mat-label>
+        <input matInput #city (keyup)="cityAddressChanged(city.value)">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Your phone number</mat-label>
+        <input matInput #phone (keyup)="phoneNumberChanged(phone.value)">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Your email address</mat-label>
+        <input matInput #email (keyup)="emailAddressChanged(email.value)">
+      </mat-form-field>
+    </div>
+
+  </div>
+
+</mat-expansion-panel>

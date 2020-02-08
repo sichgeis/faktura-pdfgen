@@ -1,0 +1,57 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Expenses
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="d-flex mb-n3">
+    <div class="flex-fill">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Invoice number</mat-label>
+        <input matInput #invNum
+               (keyup)="invoiceNumberChanged(invNum.value)">
+      </mat-form-field>
+    </div>
+    <div class="w-25">
+    </div>
+    <div class="flex-fill">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Invoice date</mat-label>
+        <input matInput #invDate
+               (keyup)="invoiceDateChanged(invDate.value)">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="d-flex justify-content-between">
+    <div class="flex-fill w-100">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Salutation</mat-label>
+        <input matInput #salutation
+               (keyup)="salutationChanged(salutation.value)">
+      </mat-form-field>
+    </div>
+    <div class="w-25">
+    </div>
+    <div class="flex-fill w-100">
+    </div>
+  </div>
+
+  <mat-form-field class="w-100 " appearance="outline">
+    <mat-label>Preamble</mat-label>
+    <textarea matInput #preamble
+              (keyup)="PreambleChanged(preamble.value)">
+    </textarea>
+  </mat-form-field>
+
+  <mat-form-field class="w-100 " appearance="outline">
+    <mat-label>Closing</mat-label>
+    <textarea matInput #closing
+              (keyup)="ClosingChanged(closing.value)">
+    </textarea>
+  </mat-form-field>
+
+</mat-expansion-panel>

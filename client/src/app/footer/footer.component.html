@@ -1,0 +1,39 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Footer
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <div class="d-flex justify-content-between">
+    <div class="flex-fill">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Your tax id</mat-label>
+        <input matInput #taxId
+               (keyup)="taxIdChanged(taxId.value)">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Bank name</mat-label>
+        <input matInput #bankName
+               (keyup)="bankNameChanged(bankName.value)">
+      </mat-form-field>
+    </div>
+    <div class="w-25">
+    </div>
+    <div class="flex-fill">
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Bank IBAN</mat-label>
+        <input matInput #iban
+               (keyup)="ibanChanged(iban.value)">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Bank BIC</mat-label>
+        <input matInput #bic
+               (keyup)="bicChanged(bic.value)">
+      </mat-form-field>
+    </div>
+  </div>
+
+</mat-expansion-panel>
