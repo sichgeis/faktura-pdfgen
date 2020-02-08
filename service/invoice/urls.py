@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('pdfgen/', include('pdfgen.urls')),
+    path('api/', include('pdfgen.urls')),
     path('admin/', admin.site.urls),
 ]
