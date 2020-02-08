@@ -4,3 +4,8 @@ hr {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+/* Border */
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: white;
+}
