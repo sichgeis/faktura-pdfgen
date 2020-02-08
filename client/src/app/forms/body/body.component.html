@@ -43,14 +43,14 @@
   <mat-form-field class="w-100 " appearance="outline">
     <mat-label>Preamble</mat-label>
     <textarea matInput #preamble
-              (keyup)="PreambleChanged(preamble.value)">
+              (keyup)="preambleChanged(preamble.value)">
     </textarea>
   </mat-form-field>
 
   <mat-form-field class="w-100 " appearance="outline">
     <mat-label>Closing</mat-label>
     <textarea matInput #closing
-              (keyup)="ClosingChanged(closing.value)">
+              (keyup)="closingChanged(closing.value)">
     </textarea>
   </mat-form-field>
 

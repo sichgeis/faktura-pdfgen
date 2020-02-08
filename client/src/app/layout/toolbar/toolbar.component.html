@@ -4,8 +4,8 @@
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
 
-  <fa-icon class="p-2" [icon]="faDownload"></fa-icon>
-  <fa-icon class="p-2" [icon]="faUpload"></fa-icon>
-  <fa-icon class="p-2" [icon]="faTrash"></fa-icon>
-  <fa-icon class="p-2" [icon]="faFilePdf"></fa-icon>
+  <fa-icon class="p-2" [icon]="faDownload" (click)="saveForm()"></fa-icon>
+  <fa-icon class="p-2" [icon]="faUpload" (click)="loadForm()"></fa-icon>
+  <fa-icon class="p-2" [icon]="faTrash" (click)="resetForm()"></fa-icon>
+  <fa-icon class="p-2" [icon]="faFilePdf" (click)="generatePdf()"></fa-icon>
 </mat-toolbar>

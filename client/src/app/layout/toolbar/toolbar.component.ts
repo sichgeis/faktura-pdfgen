@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {faDownload, faFilePdf, faTrash, faUpload} from '@fortawesome/free-solid-svg-icons';
+import {FakturaService} from "../../faktura.service";
 
 @Component({
   selector: 'app-toolbar',
@@ -12,10 +13,25 @@ export class ToolbarComponent implements OnInit {
   faTrash = faTrash;
   faFilePdf = faFilePdf;
 
-  constructor() {
+  constructor(private fakturaService: FakturaService) {
   }
 
   ngOnInit() {
   }
 
+  saveForm() {
+
+  }
+
+  loadForm() {
+
+  }
+
+  resetForm() {
+
+  }
+
+  generatePdf() {
+    this.fakturaService.generatePdf();
+  }
 }

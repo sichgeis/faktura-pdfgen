@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {FakturaService} from "../../faktura.service";
 
 @Component({
   selector: 'app-body',
@@ -7,29 +8,29 @@ import {Component, OnInit} from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
-  constructor() {
+  constructor(private fakturaService: FakturaService) {
   }
 
   ngOnInit() {
   }
 
-  salutationChanged(value: string) {
-
-  }
-
-  PreambleChanged(value: string) {
-    console.log(value)
-  }
-
-  ClosingChanged(value: string) {
-
-  }
-
   invoiceNumberChanged(value: string) {
-
+    this.fakturaService.invNumber.next(value);
   }
 
   invoiceDateChanged(value: string) {
+    this.fakturaService.invDate.next(value);
+  }
 
+  salutationChanged(value: string) {
+    this.fakturaService.salutation.next(value);
+  }
+
+  preambleChanged(value: string) {
+    this.fakturaService.preamble.next(value);
+  }
+
+  closingChanged(value: string) {
+    this.fakturaService.closing.next(value);
   }
 }
