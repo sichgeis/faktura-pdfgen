@@ -1,29 +1,7 @@
-from django.http import HttpResponse
-from django.views.generic import TemplateView
-from django_tex.shortcuts import render_to_pdf
-from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from django_tex.shortcuts import render_to_pdf
 
 from .forms import NameForm
-
-
-class TestClass(object):
-    def __init__(foo, bar):
-        self.foo, self.bar = foo, bar
-
-
-class FormView(TemplateView):
-    template_name = 'form.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['my_object'] = TestClass(foo="hello", bar="world")
-        return context
-
-    def index(request):
-        template_name = 'invoice-test.tex'
-        context = {'foo': 'ß'}
-        return render_to_pdf(request, template_name, context, filename='invoice-test.pdf', )
 
 
 def get_name(request):
