@@ -2,6 +2,7 @@
   display: flex; /* displays flex-items (children) inline */
   flex-direction: column; /* stacks them vertically */
   height: 100%; /* needs to take the parents height, alternative: body {display: flex} */
+  background: #f0f0f0
 }
 
 app-content {
