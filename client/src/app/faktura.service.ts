@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -7,35 +7,35 @@ import {HttpClient} from "@angular/common/http";
 })
 export class FakturaService {
 
-  company = new BehaviorSubject<string>("Accelerantoronics");
+  company = new BehaviorSubject<string>("");
 
-  street = new BehaviorSubject<string>("Marienplatz 42");
-  city = new BehaviorSubject<string>("82917 München");
-  phone = new BehaviorSubject<string>("+00 000 0000 0000");
-  email = new BehaviorSubject<string>("demo@example.invalid");
+  street = new BehaviorSubject<string>("");
+  city = new BehaviorSubject<string>("");
+  phone = new BehaviorSubject<string>("");
+  email = new BehaviorSubject<string>("");
 
-  recName = new BehaviorSubject<string>("Ada Lovelace");
-  recCompany = new BehaviorSubject<string>("Impactful Things");
-  recStreet = new BehaviorSubject<string>("Squared Circle 13");
-  recCity = new BehaviorSubject<string>("A1 9CD London");
+  recName = new BehaviorSubject<string>("");
+  recCompany = new BehaviorSubject<string>("");
+  recStreet = new BehaviorSubject<string>("");
+  recCity = new BehaviorSubject<string>("");
 
-  invNumber = new BehaviorSubject<string>("1062");
-  invDate = new BehaviorSubject<string>("31.9.2020");
-  salutation = new BehaviorSubject<string>("Sehr geehrtes Impactful Things Team");
-  preamble = new BehaviorSubject<string>("für den Monat Januar 2020 erlaube ich mir die folgenden Leistungen in Rechnung zu stellen:");
-  closing = new BehaviorSubject<string>("Gemäß §19 UStG ist in dem ausgewiesenen Betrag auf dieser Rechnung keine Umsatzsteuer enthalten. Ich bitte um Überweisung innerhalb der nächsten 30 Tage auf das unten genannte Konto.");
+  invNumber = new BehaviorSubject<string>("");
+  invDate = new BehaviorSubject<string>("");
+  salutation = new BehaviorSubject<string>("");
+  preamble = new BehaviorSubject<string>("");
+  closing = new BehaviorSubject<string>("");
 
-  taxId = new BehaviorSubject<string>("000/0000/000");
-  bankName = new BehaviorSubject<string>("Example Bank");
-  iban = new BehaviorSubject<string>("DE00 0000 0000 0000 0000 00");
-  bic = new BehaviorSubject<string>("DEMOXXXXXXX");
+  taxId = new BehaviorSubject<string>("");
+  bankName = new BehaviorSubject<string>("");
+  iban = new BehaviorSubject<string>("");
+  bic = new BehaviorSubject<string>("");
 
   private serviceUrl: string = '/api/';
 
   constructor(private httpClient: HttpClient) {
   }
 
-  generatePdf() {
+  generatePdf(): Observable<Blob> {
     const formData = new FormData();
     formData.append('company_name', this.company.value);
     formData.append('sender_name', this.company.value);
@@ -57,9 +57,6 @@ export class FakturaService {
     formData.append('bank_iban', this.iban.value);
     formData.append('bank_bic', this.bic.value);
 
-    this.httpClient.post<any>(this.serviceUrl, formData).subscribe(
-      (res) => console.log(res),
-      (err) => console.log(err)
-    );
+    return this.httpClient.request('POST', this.serviceUrl, {responseType:'blob', body: formData});
   }
 }
