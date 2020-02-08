@@ -14,8 +14,9 @@ import {ExpensesComponent} from './forms/expenses/expenses.component';
 import {MatSelectModule} from "@angular/material/select";
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import { ContentComponent } from './layout/content/content.component';
-import { LayoutFooterComponent } from './layout/layout-footer/layout-footer.component';
+import {ContentComponent} from './layout/content/content.component';
+import {LayoutFooterComponent} from './layout/layout-footer/layout-footer.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LayoutFooterComponent } from './layout/layout-footer/layout-footer.comp
     MatExpansionModule,
     MatSelectModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
