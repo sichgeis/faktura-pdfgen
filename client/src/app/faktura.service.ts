@@ -33,7 +33,7 @@ export class FakturaService {
 
   workItems = new BehaviorSubject<Array<BehaviorSubject<WorkItem>>>([]);
 
-  private serviceUrl: string = '/api/';
+  private serviceUrl: string = '/faktura/api/';
 
   constructor(private httpClient: HttpClient) {
   }

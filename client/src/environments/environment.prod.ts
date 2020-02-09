@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  APIEndPoint: "/api"
+  APIEndPoint: "/faktura/api"
 };
