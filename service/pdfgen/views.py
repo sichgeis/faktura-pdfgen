@@ -14,7 +14,7 @@ def get_name(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            template_name = 'test.tex'
+            template_name = 'invoice-test.tex'
             context = {
                 'company_name': form.cleaned_data['company_name'],
                 'sender_name': form.cleaned_data['sender_name'],
