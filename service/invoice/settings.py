@@ -125,4 +125,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LATEX_INTERPRETER = os.environ.get('LATEX_INTERPRETER', 'lualatex')
+LATEX_INTERPRETER = os.environ.get('LATEX_INTERPRETER', 'pdflatex')
