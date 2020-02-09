@@ -1,1 +1,6 @@
+<div class="pb-1">
+  Add and remove expense
+  <fa-icon class="pl-3" [icon]="faPlusSquare" (click)="pushWorkItem()"></fa-icon>
+  <fa-icon class="pl-3" [icon]="faMinusSquare" (click)="popWorkItem()"></fa-icon>
+</div>
 <app-work-item *ngFor="let workItem of workItems" [workItem]="workItem"></app-work-item>

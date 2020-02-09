@@ -1,8 +1,5 @@
-button {
-  border-width: 0px;
-  border-color: rgb(0,0,0);
-}
-
-button:focus {
-  outline: 0px;
+fa-icon {
+  color: #b71c1c;
+  height: 3em;
+  font: 400 20px Roboto, "Helvetica Neue", sans-serif;
 }

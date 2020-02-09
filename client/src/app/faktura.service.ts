@@ -59,7 +59,7 @@ export class FakturaService {
     formData.append('bank_name', this.bankName.value);
     formData.append('bank_iban', this.iban.value);
     formData.append('bank_bic', this.bic.value);
-    console.log(this.workItems.value);
+    formData.append('expenses', FakturaService.serializeExpenses(this.workItems.value));
 
     return this.httpClient.request('POST', this.serviceUrl, {responseType: 'blob', body: formData});
   }
@@ -127,5 +127,13 @@ export class FakturaService {
     this.bic.next("");
 
     this.workItems = new BehaviorSubject<Array<BehaviorSubject<WorkItem>>>([]);
+  }
+
+  private static serializeExpenses(arr: Array<BehaviorSubject<WorkItem>>): string {
+    return arr.map(subject => subject.value)
+      .map(item => {
+        return "\\hourrow{" + item.title + "}{" + item.hours + "}{" + item.rate + "}"
+      })
+      .reduce((prev, curr) => prev + "\n" + curr, "\\feetype{Service}");
   }
 }
