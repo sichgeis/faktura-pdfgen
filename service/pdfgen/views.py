@@ -14,7 +14,7 @@ def get_name(request):
             # process the data in form.cleaned_data as required
             # ...
             # redirect to a new URL:
-            template_name = 'invoice-test.tex'
+            template_name = 'test.tex'
             context = {
                 'company_name': form.cleaned_data['company_name'],
                 'sender_name': form.cleaned_data['sender_name'],
@@ -38,7 +38,7 @@ def get_name(request):
                 'expenses': form.cleaned_data['expenses'],
             }
 
-            return render_to_pdf(request, template_name, context, filename='test.pdf', )
+            return render_to_pdf(request, template_name, context, filename='invoice-test.pdf', )
 
     # if a GET (or any other method) we'll create a blank form
     else:
