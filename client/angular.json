@@ -69,7 +69,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "faktura-client:build:production"
+              "browserTarget": "faktura-client:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },
