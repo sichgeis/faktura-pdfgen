@@ -14,19 +14,35 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  taxIdChanged(value: string) {
+  get taxId() {
+    return this.fakturaService.taxId.value;
+  }
+
+  set taxId(value: string) {
     this.fakturaService.taxId.next(value);
   }
 
-  bankNameChanged(value: string) {
+  get bankName() {
+    return this.fakturaService.bankName.value;
+  }
+
+  set bankName(value: string) {
     this.fakturaService.bankName.next(value);
   }
 
-  ibanChanged(value: string) {
+  get iban() {
+    return this.fakturaService.iban.value;
+  }
+
+  set iban(value: string) {
     this.fakturaService.iban.next(value);
   }
 
-  bicChanged(value: string) {
+  get bic() {
+    return this.fakturaService.bic.value;
+  }
+
+  set bic(value: string) {
     this.fakturaService.bic.next(value);
   }
 }

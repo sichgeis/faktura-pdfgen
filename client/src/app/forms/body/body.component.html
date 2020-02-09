@@ -9,8 +9,7 @@
     <div class="flex-fill">
       <mat-form-field class="w-100" appearance="outline">
         <mat-label>Invoice number</mat-label>
-        <input matInput #invNum
-               (keyup)="invoiceNumberChanged(invNum.value)">
+        <input matInput [(ngModel)]="invNumber">
       </mat-form-field>
     </div>
     <div class="w-25">
@@ -18,8 +17,7 @@
     <div class="flex-fill">
       <mat-form-field class="w-100" appearance="outline">
         <mat-label>Invoice date</mat-label>
-        <input matInput #invDate
-               (keyup)="invoiceDateChanged(invDate.value)">
+        <input matInput [(ngModel)]="invDate">
       </mat-form-field>
     </div>
   </div>
@@ -30,8 +28,7 @@
     <div class="flex-fill w-100">
       <mat-form-field class="w-100" appearance="outline">
         <mat-label>Salutation</mat-label>
-        <input matInput #salutation
-               (keyup)="salutationChanged(salutation.value)">
+        <input matInput [(ngModel)]="salutation">
       </mat-form-field>
     </div>
     <div class="w-25">
@@ -42,15 +39,13 @@
 
   <mat-form-field class="w-100 " appearance="outline">
     <mat-label>Preamble</mat-label>
-    <textarea matInput #preamble
-              (keyup)="preambleChanged(preamble.value)">
+    <textarea matInput [(ngModel)]="preamble">
     </textarea>
   </mat-form-field>
 
   <mat-form-field class="w-100 " appearance="outline">
     <mat-label>Closing</mat-label>
-    <textarea matInput #closing
-              (keyup)="closingChanged(closing.value)">
+    <textarea matInput [(ngModel)]="closing">
     </textarea>
   </mat-form-field>
 

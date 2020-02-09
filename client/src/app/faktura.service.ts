@@ -57,6 +57,56 @@ export class FakturaService {
     formData.append('bank_iban', this.iban.value);
     formData.append('bank_bic', this.bic.value);
 
-    return this.httpClient.request('POST', this.serviceUrl, {responseType:'blob', body: formData});
+    return this.httpClient.request('POST', this.serviceUrl, {responseType: 'blob', body: formData});
+  }
+
+  setSampleData() {
+    this.company.next("Accelerantoronics");
+
+    this.street.next("Marienplatz 42");
+    this.city.next("82917 München");
+    this.phone.next("+00 000 0000 0000");
+    this.email.next("demo@example.invalid");
+
+    this.recName.next("Ada Lovelace");
+    this.recCompany.next("Impactful Things");
+    this.recStreet.next("Squared Circle 13");
+    this.recCity.next("A1 9CD London");
+
+    this.invNumber.next("1062");
+    this.invDate.next("31.9.2020");
+    this.salutation.next("Sehr geehrtes Impactful Things Team");
+    this.preamble.next("für den Monat Januar 2020 erlaube ich mir die folgenden Leistungen in Rechnung zu stellen:");
+    this.closing.next("Gemäß §19 UStG ist in dem ausgewiesenen Betrag auf dieser Rechnung keine Umsatzsteuer enthalten. Ich bitte um Überweisung innerhalb der nächsten 30 Tage auf das unten genannte Konto.");
+
+    this.taxId.next("000/0000/000");
+    this.bankName.next("Example Bank");
+    this.iban.next("DE00 0000 0000 0000 0000 00");
+    this.bic.next("DEMOXXXXXXX");
+  }
+
+  resetForm() {
+    this.company.next("");
+
+    this.street.next("");
+    this.city.next("");
+    this.phone.next("");
+    this.email.next("");
+
+    this.recName.next("");
+    this.recCompany.next("");
+    this.recStreet.next("");
+    this.recCity.next("");
+
+    this.invNumber.next("");
+    this.invDate.next("");
+    this.salutation.next("");
+    this.preamble.next("");
+    this.closing.next("");
+
+    this.taxId.next("");
+    this.bankName.next("");
+    this.iban.next("");
+    this.bic.next("");
   }
 }

@@ -9,14 +9,12 @@
     <div class="flex-fill">
       <mat-form-field class="w-100" appearance="outline">
         <mat-label>Your tax id</mat-label>
-        <input matInput #taxId
-               (keyup)="taxIdChanged(taxId.value)">
+        <input matInput [(ngModel)]="taxId">
       </mat-form-field>
       <br>
       <mat-form-field class="w-100" appearance="outline">
         <mat-label>Bank name</mat-label>
-        <input matInput #bankName
-               (keyup)="bankNameChanged(bankName.value)">
+        <input matInput [(ngModel)]="bankName">
       </mat-form-field>
     </div>
     <div class="w-25">
@@ -24,14 +22,12 @@
     <div class="flex-fill">
       <mat-form-field class="w-100" appearance="outline">
         <mat-label>Bank IBAN</mat-label>
-        <input matInput #iban
-               (keyup)="ibanChanged(iban.value)">
+        <input matInput [(ngModel)]="iban">
       </mat-form-field>
       <br>
       <mat-form-field class="w-100" appearance="outline">
         <mat-label>Bank BIC</mat-label>
-        <input matInput #bic
-               (keyup)="bicChanged(bic.value)">
+        <input matInput [(ngModel)]="bic">
       </mat-form-field>
     </div>
   </div>
