@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {WorkItem} from "./forms/expenses/expenses.component";
 
 @Injectable({
   providedIn: 'root'
@@ -30,6 +31,8 @@ export class FakturaService {
   iban = new BehaviorSubject<string>("");
   bic = new BehaviorSubject<string>("");
 
+  workItems = new BehaviorSubject<Array<BehaviorSubject<WorkItem>>>([]);
+
   private serviceUrl: string = '/api/';
 
   constructor(private httpClient: HttpClient) {
@@ -56,6 +59,7 @@ export class FakturaService {
     formData.append('bank_name', this.bankName.value);
     formData.append('bank_iban', this.iban.value);
     formData.append('bank_bic', this.bic.value);
+    console.log(this.workItems.value);
 
     return this.httpClient.request('POST', this.serviceUrl, {responseType: 'blob', body: formData});
   }
@@ -83,6 +87,19 @@ export class FakturaService {
     this.bankName.next("Example Bank");
     this.iban.next("DE00 0000 0000 0000 0000 00");
     this.bic.next("DEMOXXXXXXX");
+
+    this.workItems.next([
+      new BehaviorSubject<WorkItem>({
+        title: "Install engine",
+        hours: 2,
+        rate: 80
+      }),
+      new BehaviorSubject<WorkItem>({
+        title: "Implement auto pilot",
+        hours: 4,
+        rate: 100
+      })
+    ]);
   }
 
   resetForm() {
@@ -108,5 +125,7 @@ export class FakturaService {
     this.bankName.next("");
     this.iban.next("");
     this.bic.next("");
+
+    this.workItems = new BehaviorSubject<Array<BehaviorSubject<WorkItem>>>([]);
   }
 }

@@ -1,1 +1,20 @@
-<p>work-item works!</p>
+<div class="d-flex my-n3">
+  <div class="flex-fill w-50">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Work item title</mat-label>
+      <input matInput [(ngModel)]="title">
+    </mat-form-field>
+  </div>
+  <div class="flex-fill w-25 px-2">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Hours</mat-label>
+      <input matInput [(ngModel)]="workItem.value.hours">
+    </mat-form-field>
+  </div>
+  <div class="flex-fill w-25">
+    <mat-form-field class="w-100" appearance="outline">
+      <mat-label>Rate</mat-label>
+      <input matInput [(ngModel)]="workItem.value.rate">
+    </mat-form-field>
+  </div>
+</div>

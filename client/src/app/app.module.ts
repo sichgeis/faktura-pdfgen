@@ -18,9 +18,7 @@ import {ContentComponent} from './layout/content/content.component';
 import {LayoutFooterComponent} from './layout/layout-footer/layout-footer.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
-import { WorkItemComponent } from './controls/work-item/work-item.component';
-import {MatTreeModule} from "@angular/material/tree";
-import {MatIconModule} from "@angular/material/icon";
+import {WorkItemComponent} from './controls/work-item/work-item.component';
 
 @NgModule({
   declarations: [
@@ -43,10 +41,8 @@ import {MatIconModule} from "@angular/material/icon";
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
-    MatTreeModule,
     HttpClientModule,
-    FormsModule,
-    MatIconModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
