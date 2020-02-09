@@ -23,3 +23,4 @@ class NameForm(forms.Form):
     bank_name = forms.CharField(label='Name', max_length=100, initial="Example Bank")
     bank_iban = forms.CharField(label='IBAN', max_length=100, initial="DE00 0000 0000 0000 0000 00")
     bank_bic = forms.CharField(label='BIC', max_length=100, initial="DEMOXXXXXXX")
+    expenses = forms.CharField(label='Expenses', max_length=1000, initial="\\feetype{Service A}\n\\hourrow{BOM item 1}{8}{100}")

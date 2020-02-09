@@ -35,6 +35,7 @@ def get_name(request):
                 'bank_name': form.cleaned_data['bank_name'],
                 'bank_iban': form.cleaned_data['bank_iban'],
                 'bank_bic': form.cleaned_data['bank_bic'],
+                'expenses': form.cleaned_data['expenses'],
             }
 
             return render_to_pdf(request, template_name, context, filename='invoice-test.pdf', )
