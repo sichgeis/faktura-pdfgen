@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {faDownload, faFileDownload, faFilePdf, faFillDrip, faTrash, faUpload} from '@fortawesome/free-solid-svg-icons';
 import {FakturaService} from "../../faktura.service";
 import {saveAs} from 'file-saver';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-toolbar',
@@ -16,18 +17,19 @@ export class ToolbarComponent implements OnInit {
   faFileDownload = faFileDownload;
   faFillDrip = faFillDrip;
 
-  constructor(private fakturaService: FakturaService) {
+  constructor(private fakturaService: FakturaService,
+              private _snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
   }
 
   saveForm() {
-
+    // todo
   }
 
   loadForm() {
-
+    // todo
   }
 
   resetForm() {
@@ -40,12 +42,24 @@ export class ToolbarComponent implements OnInit {
       const url = window.URL.createObjectURL(blob);
       console.log(url);
       window.open(url);
-    });
+    }, this.showWarning());
+  }
+
+  private showWarning() {
+    return error => {
+      if (error.status === 412) {
+        this._snackBar.open("All fields of the form need to be filled in order to render the pdf document.", "Dismiss");
+      } else console.log('http error: ', error)
+    };
   }
 
   savePdf() {
     this.fakturaService.generatePdf().subscribe(response => {
       saveAs(response);
+    }, error => {
+      if (error.status === 412) {
+        this._snackBar.open("All fields of the form need to be filled in order to render the pdf document.", "Dismiss");
+      } else console.log('http error: ', error)
     });
   }
 
