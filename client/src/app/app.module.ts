@@ -19,6 +19,7 @@ import {LayoutFooterComponent} from './layout/layout-footer/layout-footer.compon
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {WorkItemComponent} from './controls/work-item/work-item.component';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {WorkItemComponent} from './controls/work-item/work-item.component';
     MatInputModule,
     MatFormFieldModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

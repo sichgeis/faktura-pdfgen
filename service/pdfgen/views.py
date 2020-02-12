@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 from django_tex.shortcuts import render_to_pdf
 
 from .forms import NameForm
@@ -39,9 +39,8 @@ def get_name(request):
             }
 
             return render_to_pdf(request, template_name, context, filename='invoice-test.pdf', )
+        else:
+            return HttpResponse('Form validation failed', status=412)
 
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        form = NameForm()
 
-    return render(request, 'name.html', {'form': form})
+    return HttpResponse('Only POST is allowed to submit the form', status=405)
