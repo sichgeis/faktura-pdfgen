@@ -15,42 +15,42 @@ export class BodyComponent implements OnInit {
   }
 
   get invNumber() {
-    return this.fakturaService.invNumber.value;
+    return this.fakturaService.form.invNumber.value;
   }
 
   set invNumber(value: string) {
-    this.fakturaService.invNumber.next(value);
+    this.fakturaService.form.invNumber.next(value);
   }
 
   get invDate() {
-    return this.fakturaService.invDate.value;
+    return this.fakturaService.form.invDate.value;
   }
 
   set invDate(value: string) {
-    this.fakturaService.invDate.next(value);
+    this.fakturaService.form.invDate.next(value);
   }
 
   get salutation() {
-    return this.fakturaService.salutation.value;
+    return this.fakturaService.form.salutation.value;
   }
 
   set salutation(value: string) {
-    this.fakturaService.salutation.next(value);
+    this.fakturaService.form.salutation.next(value);
   }
 
   get preamble() {
-    return this.fakturaService.preamble.value;
+    return this.fakturaService.form.preamble.value;
   }
 
   set preamble(value: string) {
-    this.fakturaService.preamble.next(value);
+    this.fakturaService.form.preamble.next(value);
   }
 
   get closing() {
-    return this.fakturaService.closing.value;
+    return this.fakturaService.form.closing.value;
   }
 
   set closing(value: string) {
-    this.fakturaService.closing.next(value);
+    this.fakturaService.form.closing.next(value);
   }
 }

@@ -23,26 +23,26 @@ export class ExpensesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fakturaService.workItems.subscribe(data => console.log(data));
+    this.fakturaService.form.workItems.subscribe(data => console.log(data));
   }
 
   get workItems(): Array<BehaviorSubject<WorkItem>> {
-    return this.fakturaService.workItems.value;
+    return this.fakturaService.form.workItems.value;
   }
 
   pushWorkItem() {
-    const workItems = this.fakturaService.workItems.value;
+    const workItems = this.fakturaService.form.workItems.value;
     workItems.push(new BehaviorSubject<WorkItem>({
       hours: undefined,
       rate: undefined,
       title: undefined
     }));
-    this.fakturaService.workItems.next(workItems);
+    this.fakturaService.form.workItems.next(workItems);
   }
 
   popWorkItem() {
-    const workItems = this.fakturaService.workItems.value;
+    const workItems = this.fakturaService.form.workItems.value;
     workItems.pop();
-    this.fakturaService.workItems.next(workItems);
+    this.fakturaService.form.workItems.next(workItems);
   }
 }

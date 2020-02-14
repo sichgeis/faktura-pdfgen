@@ -25,11 +25,11 @@ export class ToolbarComponent implements OnInit {
   }
 
   saveForm() {
-    // todo
+    this.fakturaService.saveForm();
   }
 
   loadForm() {
-    // todo
+    this.fakturaService.loadForm();
   }
 
   resetForm() {

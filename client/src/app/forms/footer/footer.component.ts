@@ -15,34 +15,34 @@ export class FooterComponent implements OnInit {
   }
 
   get taxId() {
-    return this.fakturaService.taxId.value;
+    return this.fakturaService.form.taxId.value;
   }
 
   set taxId(value: string) {
-    this.fakturaService.taxId.next(value);
+    this.fakturaService.form.taxId.next(value);
   }
 
   get bankName() {
-    return this.fakturaService.bankName.value;
+    return this.fakturaService.form.bankName.value;
   }
 
   set bankName(value: string) {
-    this.fakturaService.bankName.next(value);
+    this.fakturaService.form.bankName.next(value);
   }
 
   get iban() {
-    return this.fakturaService.iban.value;
+    return this.fakturaService.form.iban.value;
   }
 
   set iban(value: string) {
-    this.fakturaService.iban.next(value);
+    this.fakturaService.form.iban.next(value);
   }
 
   get bic() {
-    return this.fakturaService.bic.value;
+    return this.fakturaService.form.bic.value;
   }
 
   set bic(value: string) {
-    this.fakturaService.bic.next(value);
+    this.fakturaService.form.bic.next(value);
   }
 }

@@ -15,74 +15,74 @@ export class HeaderComponent implements OnInit {
   }
 
   get company(): string {
-    return this.fakturaService.company.value
+    return this.fakturaService.form.company.value
   }
 
   set company(value: string) {
-    this.fakturaService.company.next(value);
+    this.fakturaService.form.company.next(value);
   }
 
   get recName() {
-    return this.fakturaService.recName.value;
+    return this.fakturaService.form.recName.value;
   }
 
   set recName(value: string) {
-    this.fakturaService.recName.next(value);
+    this.fakturaService.form.recName.next(value);
   }
 
   get recCompany() {
-    return this.fakturaService.recCompany.value;
+    return this.fakturaService.form.recCompany.value;
   }
 
   set recCompany(value: string) {
-    this.fakturaService.recCompany.next(value);
+    this.fakturaService.form.recCompany.next(value);
   }
 
   get recStreet() {
-    return this.fakturaService.recStreet.value;
+    return this.fakturaService.form.recStreet.value;
   }
 
   set recStreet(value: string) {
-    this.fakturaService.recStreet.next(value);
+    this.fakturaService.form.recStreet.next(value);
   }
 
   get recCity() {
-    return this.fakturaService.recCity.value;
+    return this.fakturaService.form.recCity.value;
   }
 
   set recCity(value: string) {
-    this.fakturaService.recCity.next(value);
+    this.fakturaService.form.recCity.next(value);
   }
 
   get street() {
-    return this.fakturaService.street.value;
+    return this.fakturaService.form.street.value;
   }
 
   set street(value: string) {
-    this.fakturaService.street.next(value);
+    this.fakturaService.form.street.next(value);
   }
 
   get city() {
-    return this.fakturaService.city.value;
+    return this.fakturaService.form.city.value;
   }
 
   set city(value: string) {
-    this.fakturaService.city.next(value);
+    this.fakturaService.form.city.next(value);
   }
 
   get phone() {
-    return this.fakturaService.phone.value;
+    return this.fakturaService.form.phone.value;
   }
 
   set phone(value: string) {
-    this.fakturaService.phone.next(value);
+    this.fakturaService.form.phone.next(value);
   }
 
   get email() {
-    return this.fakturaService.email.value;
+    return this.fakturaService.form.email.value;
   }
 
   set email(value: string) {
-    this.fakturaService.email.next(value);
+    this.fakturaService.form.email.next(value);
   }
 }
