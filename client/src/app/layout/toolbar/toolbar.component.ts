@@ -25,11 +25,9 @@ export class ToolbarComponent implements OnInit {
   }
 
   saveForm() {
-    this.fakturaService.saveForm();
-  }
-
-  loadForm() {
-    this.fakturaService.loadForm();
+    let serializedForm = this.fakturaService.getSerializedForm();
+    let blob: Blob = new Blob([serializedForm], {type: 'application/json'});
+    saveAs(blob, 'fakturaForm');
   }
 
   resetForm() {
@@ -65,5 +63,10 @@ export class ToolbarComponent implements OnInit {
 
   preFillForm() {
     this.fakturaService.setSampleData();
+  }
+
+  loadForm(files: any) {
+    //todo check if file validates
+    this.fakturaService.loadForm(files.item(0));
   }
 }

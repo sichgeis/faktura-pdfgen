@@ -27,12 +27,20 @@ export class FakturaService {
     this.form.setSampleData();
   }
 
-  saveForm() {
-    //todo
-    console.log('save', JSON.stringify(this.form));
+  getSerializedForm() {
+    return JSON.stringify(this.form);
   }
 
-  loadForm() {
-    //todo
+  loadForm(file: File) {
+    var fileReader = new FileReader();
+    const form = this.form;
+
+    fileReader.onload = function (event) {
+      // @ts-ignore
+      var loadedForm = JSON.parse(event.target.result);
+      form.load(loadedForm);
+    };
+
+    fileReader.readAsText(file);
   }
 }

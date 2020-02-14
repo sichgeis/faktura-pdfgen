@@ -146,4 +146,25 @@ export class FakturaForm {
     }
   }
 
+  load(loadedForm: any) {
+    this.company.next(loadedForm.company);
+    this.street.next(loadedForm.street);
+    this.city.next(loadedForm.city);
+    this.phone.next(loadedForm.phone);
+    this.email.next(loadedForm.email);
+    this.recName.next(loadedForm.recName);
+    this.recCompany.next(loadedForm.recCompany);
+    this.recStreet.next(loadedForm.recStreet);
+    this.recCity.next(loadedForm.recCity);
+    this.invNumber.next(loadedForm.invNumber);
+    this.invDate.next(loadedForm.invDate);
+    this.salutation.next(loadedForm.salutation);
+    this.preamble.next(loadedForm.preamble);
+    this.workItems.next([]);
+    this.closing.next(loadedForm.closing);
+    this.taxId.next(loadedForm.taxId);
+    this.bankName.next(loadedForm.bankName);
+    this.iban.next(loadedForm.iban);
+    this.bic.next(loadedForm.bic);
+  }
 }

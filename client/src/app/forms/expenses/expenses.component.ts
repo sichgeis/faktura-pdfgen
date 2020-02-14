@@ -23,7 +23,6 @@ export class ExpensesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fakturaService.form.workItems.subscribe(data => console.log(data));
   }
 
   get workItems(): Array<BehaviorSubject<WorkItem>> {

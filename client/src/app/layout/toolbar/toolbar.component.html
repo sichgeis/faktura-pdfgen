@@ -5,7 +5,12 @@
   <span class="example-fill-remaining-space"></span>
 
   <fa-icon class="p-2" [icon]="faDownload" (click)="saveForm()"></fa-icon>
-  <fa-icon class="p-2" [icon]="faUpload" (click)="loadForm()"></fa-icon>
+  <div id="file-input-div">
+    <label for="file-input">
+      <fa-icon class="p-2" [icon]="faUpload"></fa-icon>
+    </label>
+    <input type="file" id="file-input" (change)="loadForm($event.target.files)">
+  </div>
   <fa-icon class="p-2" [icon]="faFillDrip" (click)="preFillForm()"></fa-icon>
   <fa-icon class="p-2" [icon]="faTrash" (click)="resetForm()"></fa-icon>
   <fa-icon class="p-2" [icon]="faFilePdf" (click)="openPdf()"></fa-icon>

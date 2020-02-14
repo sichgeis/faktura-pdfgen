@@ -8,3 +8,12 @@
   background: #b71c1c;
   color: #fafafa;
 }
+
+#file-input {
+  display: none;
+}
+
+
+#file-input-div {
+  margin-bottom: -8px;
+}
